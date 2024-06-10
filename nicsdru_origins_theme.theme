@@ -302,7 +302,6 @@ function nicsdru_origins_theme_preprocess_file_link(array &$variables) {
 
   $file = $variables['file'];
 
-  // @phpstan-ignore-next-line
   $variables['file_size'] = ByteSizeMarkup::create($file->getSize(), \Drupal::languageManager()->getCurrentLanguage()->getId());
   $variables['file_url'] = $file->createFileUrl();
   $file_extension = pathinfo($variables['file_url'], PATHINFO_EXTENSION);
@@ -570,7 +569,6 @@ function nicsdru_origins_theme_preprocess_media(&$variables) {
     }
 
     if (!empty($file)) {
-      // @phpstan-ignore-next-line
       $variables['file_size'] = ByteSizeMarkup::create($file->getSize(), \Drupal::languageManager()->getCurrentLanguage()->getId());
       $variables['file_url'] = $file->createFileUrl();
       $variables['file_extension'] = pathinfo($variables['file_url'], PATHINFO_EXTENSION);
