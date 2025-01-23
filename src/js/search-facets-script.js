@@ -34,6 +34,11 @@
         };
         // Add handler for clicks on widget links.
         $widgetBtn.on('click', clickHandler);
+
+        // If the initial facet state is active, trigger the click handler.
+        if ($widget.parent().hasClass('facet-active')) {
+          $widgetBtn.click();
+        }
       });
     },
   };
